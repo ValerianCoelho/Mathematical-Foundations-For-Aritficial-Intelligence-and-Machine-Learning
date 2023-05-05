@@ -6,9 +6,11 @@ def nthOrderDerivative(function, n):
     derivatives = [diff(function, x, n).subs(x, (angle*pi)/180) for angle in range(-360, 361)]
     return derivatives
 
+# Plots the first four order derivatives of a function 
 def visualizeNthOrderDerivative(function, xaxix_label):
-    # Plots the first four order derivatives of a function 
+    plt.title('Visualizing nth Order Derivatives') # Set the title of the plot
     plt.xlabel(xaxix_label)
+    plt.xticks(range(0, 721, 60), labels=[str(x) for x in range(-360, 361, 60)]) # Set the x-ticks for the plot ranging from -360 to 360 degrees with a step size of 60 degrees
     plt.plot(nthOrderDerivative(function, 1), label='1st Order Derivative')
     plt.plot(nthOrderDerivative(function, 2), label='2nd Order Derivative')
     plt.plot(nthOrderDerivative(function, 3), label='3rd Order Derivative')
@@ -18,12 +20,6 @@ def visualizeNthOrderDerivative(function, xaxix_label):
 
 # Define the variable 'x' as a symbol
 x = symbols('x')
-
-# Set the title of the plot
-plt.title('Visualizing nth Order Derivatives')
-
-# Set the x-ticks for the plot ranging from -360 to 360 degrees with a step size of 60 degrees
-plt.xticks(range(0, 721, 60), labels=[str(x) for x in range(-360, 361, 60)])
 
 # Call the visualizeNthOrderDerivative() function for each of the input functions
 visualizeNthOrderDerivative(sin(x), 'sin(x)')
