@@ -2,11 +2,12 @@ import matplotlib.pyplot as plt
 from sympy import *
 
 def nthOrderDerivative(function, n):
-    # Computes the nth order derivative of the function at each angle from -360 to 360 degrees
+    # Computes the nth order derivative of the function with respect to 'x' at each angle from -360 to 360 degrees
     derivatives = [diff(function, x, n).subs(x, (angle*pi)/180) for angle in range(-360, 361)]
     return derivatives
 
 def visualizeNthOrderDerivative(function, xaxix_label):
+    # Plots the first four order derivatives of a function 
     plt.xlabel(xaxix_label)
     plt.plot(nthOrderDerivative(function, 1), label='1st Order Derivative')
     plt.plot(nthOrderDerivative(function, 2), label='2nd Order Derivative')
@@ -15,10 +16,16 @@ def visualizeNthOrderDerivative(function, xaxix_label):
     plt.legend()
     plt.show()
 
+# Define the variable 'x' as a symbol
 x = symbols('x')
+
+# Set the title of the plot
 plt.title('Visualizing nth Order Derivatives')
+
+# Set the x-ticks for the plot ranging from -360 to 360 degrees with a step size of 60 degrees
 plt.xticks(range(0, 721, 60), labels=[str(x) for x in range(-360, 361, 60)])
 
+# Call the visualizeNthOrderDerivative() function for each of the input functions
 visualizeNthOrderDerivative(sin(x), 'sin(x)')
 visualizeNthOrderDerivative(sin(x)/x, 'sin(x)/x')
 visualizeNthOrderDerivative(cos(x**2), 'cos(x^2)')
