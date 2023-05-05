@@ -13,8 +13,8 @@ def taylor_series(function, x0, n):
 console = Console()
 table = Table(show_header=True, show_lines=True, box = box.SQUARE_DOUBLE_HEAD)
 
-x0 = 0
-n = 8
+x0 = 0 # the point around which the Taylor series needs to be computed, when x0 = 0; the TS is calculated from the origin
+n = 8 # the number of terms in the Taylor series
 a = symbols('a')
 
 table.add_column('Sr No.', justify='center', vertical = 'middle')
