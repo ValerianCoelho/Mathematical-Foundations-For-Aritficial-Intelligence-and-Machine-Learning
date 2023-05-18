@@ -1,3 +1,15 @@
+'''
+Problem Statement:
+We are interested in calculating and visualizing the marginal probability distribution of the 
+sum of two dice rolls. We want to analyze the likelihood of obtaining each possible sum value 
+when rolling two fair six-sided dice.
+
+Solution:
+To calculate the marginal probability distribution and visualize it, we utilize a bar chart 
+representation. The x-axis of the chart will denote the sum values, while the y-axis will 
+represent the corresponding probabilities.
+'''
+
 import matplotlib.pyplot as plt
 
 # Probability distribution of rolling two dice

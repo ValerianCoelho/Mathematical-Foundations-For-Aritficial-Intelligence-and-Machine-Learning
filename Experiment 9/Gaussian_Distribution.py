@@ -1,3 +1,10 @@
+'''
+Problem Statement:
+We aim to visualize a Gaussian distribution, also known as a normal distribution. The distribution 
+is defined by its mean and standard deviation. We want to plot the probability density function 
+of the Gaussian distribution using a line plot.
+'''
+
 import numpy as np
 import matplotlib.pyplot as plt
 

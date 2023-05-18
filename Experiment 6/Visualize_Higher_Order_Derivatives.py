@@ -1,3 +1,10 @@
+'''
+Problem Statement:
+We are interested in visualizing the nth order derivatives of different functions. The code 
+snippet provided uses the matplotlib and sympy libraries to compute and plot the first four 
+order derivatives of a given function.
+'''
+
 import matplotlib.pyplot as plt
 from sympy import *
 
