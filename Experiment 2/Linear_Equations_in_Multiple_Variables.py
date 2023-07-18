@@ -11,7 +11,7 @@ for i in range(no_of_variables):
     A.append(coefficients)
 
 constants = input('Enter the Constants : ')
-constants = [B.append([int(x)]) for x in constants.split()]
+[B.append([int(x)]) for x in constants.split()]
 
 A = numpy.array(A)
 B = numpy.array(B)
