@@ -1,32 +1,24 @@
-cap_A = 7
-cap_B = 3
-req = 4
+import math
 
-def transfer(from_jug, to_jug, to_jug_capacity):
-    return min(from_jug, to_jug_capacity - to_jug)
+mc = int(input('Enter the capacity of m : '))
+nc = int(input('Enter the capacity of n : '))
+d = int(input('Enter the capacity of d: '))
 
-def water_jug(jug_A, jug_B, procedure):
-    if jug_A == req or jug_B == req:
-        print(procedure)
-        exit(0)
-    
-    if (jug_A, jug_B) in visited_states:
-        return
-    
-    visited_states.add((jug_A, jug_B))
-    
-    water_jug(cap_A, jug_B, procedure + '\nFill Jug A')
-    water_jug(jug_A, cap_B, procedure + '\nFill Jug B')
+m = 0
+n = 0
 
-    water_jug(0, jug_B, procedure + '\nEmpty Jug A')
-    water_jug(jug_A, 0, procedure + '\nEmpty Jug B')
+if(d % math.gcd(mc, nc) == 0):
+    while (m != d and n != d):
+        if(m == 0):
+            m = mc
+        elif(n == nc):
+            n = 0
+        else:
+            transfer = min(m, nc - n)
+            m = m - transfer
+            n = n + transfer
+        
+        print(f'({m}, {n})')
 
-    transfer_amount = transfer(jug_A, jug_B, cap_B)
-    water_jug(jug_A - transfer_amount, jug_B + transfer_amount, procedure + '\nTransfer Water from A to B')
-
-    transfer_amount = transfer(jug_B, jug_A, cap_A)
-    water_jug(jug_A + transfer_amount, jug_B - transfer_amount, procedure + '\nTransfer Water from B to A')
-
-visited_states = set()
-water_jug(0, 0, '')
-print('Not found')
+else:
+    print('No solution')
