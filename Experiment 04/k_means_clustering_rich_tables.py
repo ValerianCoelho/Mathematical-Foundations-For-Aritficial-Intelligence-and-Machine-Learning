@@ -81,6 +81,8 @@ while True:
         break
     else:
         old_cluster = new_clusters.copy()
+    
+    iteration += 1
 
 # Display the final centroids after clustering.
 print("Final Centroids:")
