@@ -59,9 +59,6 @@ while True:
         break
     else:
         old_cluster = new_clusters.copy()
-
-    # Print the current iteration number.
-    print(f"Iteration {iteration}")
     
     # Increment the iteration counter.
     iteration += 1
